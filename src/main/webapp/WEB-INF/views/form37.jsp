@@ -61,36 +61,97 @@
                                     <div class="form-group">
                                         <table class="table table-condensed table-hover">
                                             <tr>
-                                                <td><label>Jenis</label></td>
-                                                <td><select id="sJenis" name="jenis" class="form-control">
-                                                        <option value="025">Deposit on call</option>
-                                                        <option value="030">Deposito berjangka</option>
-                                                        <option value="035">Sertifikat deposito</option>
-                                                        <option value="oJenis1">Deposito Berjangka/Sertifikat Deposito yang diblokir</option>
-                                                        <option value="039">Lainnya</option>
-                                                    </select></td>
-                                            </tr>
-                                            <tr id="trJenis1">
-                                            <td></td>
-                                            <td>
-                                                <select id="sJenis1"name="jenis" class="form-control">
-                                                    <option value="036">Dalam rangka escrow account</option>
-                                                    <option value="ooJenis1">Dalam rangka setoran jaminan</option>
-                                                    <option value="049">Dalam rangka cash collateral</option>
-                                                    <option value="039">Lainnya</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr id="trtrJenis1">
-                                            <td></td>
-                                            <td>
-                                            <select name="jenis" class="form-control">
-                                                    <option value="038">Penerbitan garansi</option>
-                                                    <option value="032">Penerbitan LC</option>
-                                                    <option value="033">Transaksi Derivatif</option>
-                                                    <option value="034">Lainnya</option>
-                                            </select></td>
-                                        </tr>
+										<td><label>Jenis</label></td>
+										<td><select id="sJenis" name="jenis" class="form-control">
+												<optgroup label="Subordinasi">
+													<option value="oJenis1">Tanpa Jangka Waktu (Perpetual)</option>
+													<option value="oJenis2">Dengan Jangka Waktu (Dated)</option>
+												</optgroup>
+												<option value="64">Kewajiban Sewa Pembiayaan (Finance Lease)</option>
+												<option value="65">Dana kelolaan</option>
+												<option value="69">Giro bersaldo kredit</option>
+												<optgroup label="Lainnya">
+													<option value="67">Bilateral</option>
+													<option value="68">Sindikasi</option>
+												</optgroup>
+										</select></td>
+									</tr>
+									<!-- MASIH SALAH -->
+									<tr id="trJenis1">
+										<td></td>
+										<td><select id="sJenis1" name="jenis" class="form-control">
+												<optgroup label="Kumulatif">
+													<option value="oJenis1a">Ada fitur tambahan</option>
+													<option value="111">Tidak ada fitur tambahan</option>
+												</optgroup>
+												<optgroup label="Non Kumulatif">
+													<option value="oJenis1b">Ada fitur tambahan</option>
+													<option value="120">Tidak ada fitur tambahan</option>
+												</optgroup>
+										</select></td>
+									</tr>
+									<tr id="trJenis1a">
+										<td></td>
+										<td><select name="jenis" class="form-control">
+												<option value="101">Opsi Beli (Call Option)</option>
+												<option value="102">Opsi Jual (Put Option)</option>
+												<optgroup label="Opsi Konversi (Convertible Option)">
+													<option value="103">Mandatory</option>
+													<option value="104">Tidak Mandatory</option>
+												</optgroup>
+												<option value="110">Lainnya</option>
+										</select></td>
+									</tr>
+									<tr id="trJenis1b">
+										<td></td>
+										<td><select name="jenis" class="form-control">
+												<option value="112">Opsi Beli (Call Option)</option>
+												<option value="113">Opsi Jual (Put Option)</option>
+												<optgroup label="Opsi Konversi (Convertible Option)">
+													<option value="114">Mandatory</option>
+													<option value="115">Tidak Mandatory</option>
+												</optgroup>
+												<option value="119">Lainnya</option>
+										</select></td>
+									</tr>
+									<tr id="trJenis2">
+										<td></td>
+										<td><select id="sJenis2" name="jenis" class="form-control">
+												<optgroup label="Kumulatif">
+													<option value="oJenis2a">Ada fitur tambahan</option>
+													<option value="130">Tidak ada fitur tambahan</option>
+												</optgroup>
+												<optgroup label="Non Kumulatif">
+													<option value="oJenis2b">Ada fitur tambahan</option>
+													<option value="140">Tidak ada fitur tambahan</option>
+												</optgroup>
+										</select></td>
+									</tr>
+									<tr id="trJenis2a">
+										<td></td>
+										<td><select name="jenis" class="form-control">
+												<option value="121">Opsi Beli (Call Option)</option>
+												<option value="122">Opsi Jual (Put Option)</option>
+												<optgroup label="Opsi Konversi (Convertible Option)">
+													<option value="123">Mandatory</option>
+													<option value="124">Tidak Mandatory</option>
+												</optgroup>
+												<option value="129">Lainnya</option>
+										</select></td>
+									</tr>
+									<tr id="trJenis2b">
+										<td></td>
+										<td><select name="jenis" class="form-control">
+												<option value="131">Opsi Beli (Call Option)</option>
+												<option value="132">Opsi Jual (Put Option)</option>
+												<optgroup label="Opsi Konversi (Convertible Option)">
+													<option value="133">Mandatory</option>
+													<option value="134">Tidak Mandatory</option>
+												</optgroup>
+												<option value="139">Lainnya</option>
+										</select></td>
+									</tr>
+									
                                         <tr>
                                             <td><label>Nasabah</label></td>
                                             </tr>
@@ -270,24 +331,62 @@
                     format: 'dd/mm/yyyy'
                 });
                 
-                $("#trJenis1").hide();
-                $("#sJenis").change(function () {
-                    var val = $(this).val();
-                    if (val == "oJenis1") {
-                        $("#trJenis1").show();
-                    } else {
-                        $("#trJenis1").hide();
-                    }
-                });
-                $("#trtrJenis1").hide();
-                $("#sJenis1").change(function () {
-                    var val = $(this).val();
-                    if (val == "ooJenis1") {
-                        $("#trtrJenis1").show();
-                    } else {
-                        $("#trtrJenis1").hide();
-                    }
-                });
+                $("#trJenis1b").hide();
+			$("#trJenis2").hide();
+			$("#trJenis2a").hide();
+			$("#trJenis2b").hide();
+
+			$("#sJenis").change(function() {
+				var val = $(this).val();
+				if (val == "oJenis1") {
+					$("#trJenis1").show();
+					$("#trJenis1a").show();
+					$("#trJenis1b").hide();
+					$("#trJenis2").hide();
+					$("#trJenis2a").hide();
+					$("#trJenis2b").hide();
+				} else if (val == "oJenis2") {
+					$("#trJenis1").hide();
+					$("#trJenis1a").hide();
+					$("#trJenis1b").hide();
+					$("#trJenis2").show();
+					$("#trJenis2a").show();
+					$("#trJenis2b").hide();
+				} else {
+					$("#trJenis1").hide();
+					$("#trJenis1a").hide();
+					$("#trJenis1b").hide();
+					$("#trJenis2").hide();
+					$("#trJenis2a").hide();
+					$("#trJenis2b").hide();
+				}
+			});
+			$("#sJenis1").change(function() {
+				var val = $(this).val();
+				if (val == "oJenis1a") {
+					$("#trJenis1a").show();
+					$("#trJenis1b").hide();
+				} else if (val == "oJenis1b") {
+					$("#trJenis1a").hide();
+					$("#trJenis1b").show();
+				} else {
+					$("#trJenis1a").hide();
+					$("#trJenis1b").hide();
+				}
+			});
+			$("#sJenis2").change(function() {
+				var val = $(this).val();
+				if (val == "oJenis2a") {
+					$("#trJenis2a").show();
+					$("#trJenis2b").hide();
+				} else if (val == "oJenis2b") {
+					$("#trJenis2a").hide();
+					$("#trJenis2b").show();
+				} else {
+					$("#trJenis2a").hide();
+					$("#trJenis2b").hide();
+				}
+			});
                 $("#trSifat1").show();
                 $("#sSifat").change(function () {
                     var val = $(this).val();

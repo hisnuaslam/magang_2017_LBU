@@ -141,7 +141,7 @@ public class HomeController {
 		return "form26";
 	}
   @RequestMapping(value = "/form27", method = RequestMethod.GET)
-	public String form17(Locale locale, Model model) {
+	public String form27(Locale locale, Model model) {
 		return "form27";
 	}
   @RequestMapping(value = "/form28", method = RequestMethod.GET)
@@ -198,7 +198,7 @@ public class HomeController {
 	} 
 	@RequestMapping(value = "/form41", method = RequestMethod.GET)
 	public String form41(Locale locale, Model model) {
-		return "form041";
+		return "form41";
 	}
   @RequestMapping(value = "/form42", method = RequestMethod.GET)
 	public String form42(Locale locale, Model model) {

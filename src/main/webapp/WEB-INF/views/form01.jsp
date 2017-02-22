@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Form 17 - Daftar Rincian Aset yang diambil alih</title>
+        <title>Form 01 - Daftar Rincian Aset yang diambil alih</title>
         <link rel="stylesheet"
               href="<c:url value="/resources/css/bootstrap.min.css"/>">
         <link rel="stylesheet"
